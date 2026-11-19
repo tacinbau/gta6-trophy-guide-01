@@ -1,0 +1,181 @@
+/* Leonida Platinum — own look: warm paper, dusk violet header, sunset coral accent. */
+:root {
+  --paper: #fdf8ef;
+  --card: #ffffff;
+  --ink: #241d18;
+  --muted: #6d6258;
+  --line: #e6dccb;
+  --dusk: #2b2140;
+  --dusk-2: #3a2d55;
+  --accent: #e0572e;
+  --accent-ink: #9a3418;
+  --teal: #0f766e;
+  --gold: #8a6d1b;
+  --silver: #5b6b7a;
+  --bronze: #8a5a3b;
+  --plat: #4a6b8a;
+  --radius: 10px;
+}
+* { box-sizing: border-box; }
+html { font-size: 16px; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  line-height: 1.5;
+}
+a { color: var(--accent-ink); }
+button, select, input { font: inherit; }
+
+/* Header */
+.masthead { background: linear-gradient(160deg, var(--dusk), var(--dusk-2) 70%); color: #f7f1e6; }
+.masthead-inner {
+  max-width: 1180px; margin: 0 auto; padding: 22px 18px 14px;
+  display: flex; flex-wrap: wrap; gap: 18px; align-items: flex-end; justify-content: space-between;
+}
+.brand { display: flex; gap: 14px; align-items: center; }
+.brand-mark {
+  display: grid; place-items: center; width: 58px; height: 58px; flex: none;
+  border-radius: 14px; background: var(--accent); color: #fff;
+  font-size: 1.7rem; font-weight: 700; letter-spacing: 0.06em;
+}
+.masthead h1 { margin: 0; font-size: 1.9rem; line-height: 1.1; }
+.tagline { margin: 4px 0 0; color: #d8cfe0; font-size: 0.95rem; max-width: 560px; }
+.progress { min-width: 260px; flex: 1 1 300px; max-width: 420px; }
+.progress-count { font-size: 1.15rem; }
+.progress-count strong { font-size: 1.6rem; color: #ffd9a8; }
+.progress-bar { height: 10px; background: rgba(255,255,255,0.22); border-radius: 99px; margin: 6px 0; overflow: hidden; }
+.progress-bar span { display: block; height: 100%; width: 0; background: linear-gradient(90deg, #ffb25e, var(--accent)); border-radius: 99px; transition: width 0.3s; }
+.grade-counts { display: flex; gap: 12px; flex-wrap: wrap; font-size: 0.85rem; color: #d8cfe0; }
+.grade-counts b { color: #fff; }
+
+/* Tabs */
+.tabs { max-width: 1180px; margin: 0 auto; padding: 0 18px; display: flex; gap: 4px; flex-wrap: wrap; }
+.tabs a {
+  color: #e9e2f2; text-decoration: none; padding: 10px 14px;
+  border-radius: var(--radius) var(--radius) 0 0; font-size: 0.98rem;
+}
+.tabs a:hover { background: rgba(255,255,255,0.12); color: #fff; }
+.tabs a.active { background: var(--paper); color: var(--ink); font-weight: 700; }
+
+/* Layout */
+main { max-width: 1180px; margin: 0 auto; padding: 18px; }
+.view h2 { margin: 4px 0 6px; font-size: 1.6rem; }
+.page-head p { margin: 0 0 16px; color: var(--muted); max-width: 720px; }
+
+/* Toolbar */
+.toolbar {
+  display: flex; flex-wrap: wrap; gap: 12px; align-items: flex-end;
+  background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 12px 14px; margin-bottom: 10px;
+}
+.field { display: grid; gap: 4px; font-size: 0.8rem; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; }
+.field select, .field input {
+  border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px;
+  background: #fff; color: var(--ink); min-width: 150px;
+}
+.search-field { flex: 1 1 260px; }
+.search-field input { width: 100%; }
+.switch { display: flex; gap: 8px; align-items: center; padding-bottom: 9px; font-weight: 600; cursor: pointer; }
+.switch input { width: 18px; height: 18px; accent-color: var(--accent); }
+.list-meta { color: var(--muted); font-size: 0.92rem; margin: 2px 0 12px; }
+
+/* Checklist split: list left, guide right */
+.split { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 16px; align-items: start; }
+.trophy-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.trophy {
+  display: grid; grid-template-columns: 26px 1fr auto; gap: 10px; align-items: start;
+  background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 11px 12px; cursor: pointer;
+}
+.trophy:hover { border-color: var(--accent); }
+.trophy.selected { border-color: var(--accent); box-shadow: 0 0 0 2px rgba(224,87,46,0.25); }
+.trophy.earned { background: #f2f7f3; }
+.trophy input { width: 20px; height: 20px; margin-top: 3px; accent-color: var(--teal); cursor: pointer; }
+.trophy-name { font-weight: 700; font-size: 1.02rem; }
+.trophy.earned .trophy-name { text-decoration: line-through; text-decoration-thickness: 1px; color: var(--muted); }
+.trophy-desc { color: var(--muted); font-size: 0.93rem; margin-top: 2px; }
+.trophy-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 6px; }
+.tag {
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase;
+  padding: 2px 8px; border-radius: 99px; background: #efe9dc; color: #6d6258;
+}
+.tag.grade-platinum { background: #dbe7f2; color: var(--plat); }
+.tag.grade-gold { background: #f3e5b8; color: var(--gold); }
+.tag.grade-silver { background: #e2e8ee; color: var(--silver); }
+.tag.grade-bronze { background: #f0ddd0; color: var(--bronze); }
+.tag.missable { background: #fbe3e0; color: #a1271f; }
+.tag.hidden { background: #e6e1f2; color: #4c3a78; }
+.tag.target { background: #e0f0ee; color: var(--teal); }
+.trophy-grade { font-size: 0.8rem; font-weight: 700; color: var(--muted); text-align: right; }
+
+/* Detail pane */
+.detail {
+  position: sticky; top: 14px;
+  max-height: calc(100vh - 28px); overflow-y: auto;
+  background: var(--card); border: 1px solid var(--line); border-radius: 14px;
+  padding: 18px;
+}
+.detail h2 { font-size: 1.35rem; margin: 0 0 4px; }
+.detail .official { color: var(--muted); font-style: italic; margin: 0 0 10px; }
+.detail .guide-text { margin: 12px 0; white-space: pre-wrap; }
+.detail .flag { font-weight: 700; color: #a1271f; }
+.detail h3 { font-size: 0.95rem; margin: 16px 0 6px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); }
+.detail .sources { margin: 0; padding-left: 18px; }
+.detail .sources li { margin: 4px 0; font-size: 0.92rem; }
+.detail .mark-row { display: flex; gap: 10px; align-items: center; margin-top: 14px; }
+.detail .mark-row button {
+  border: none; background: var(--teal); color: #fff; border-radius: 8px;
+  padding: 9px 14px; font-weight: 700; cursor: pointer;
+}
+.detail .mark-row button.earned { background: var(--muted); }
+.detail .spoiler-note { background: #f3ead9; border-radius: 8px; padding: 10px 12px; color: #6b4d1f; }
+
+/* Roadmap */
+.stages { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; counter-reset: stage; }
+.stage {
+  background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 18px;
+  border-left: 6px solid var(--accent);
+}
+.stage h3 { margin: 0 0 4px; font-size: 1.2rem; }
+.stage .hours { color: var(--accent-ink); font-weight: 700; font-size: 0.9rem; }
+.stage p { margin: 6px 0 10px; }
+.stage .stage-trophies { display: flex; flex-wrap: wrap; gap: 6px; }
+.stage .stage-trophies a {
+  font-size: 0.85rem; background: #f3ede0; border-radius: 99px; padding: 3px 10px;
+  text-decoration: none; color: var(--ink);
+}
+.stage .stage-trophies a.earned { background: #d9eadd; text-decoration: line-through; }
+.stage .stage-trophies a:hover { background: #eadfc8; }
+.warnings { background: #fdf0e4; border: 1px solid #f2cfae; border-radius: var(--radius); padding: 14px 14px 14px 34px; }
+.warnings li { margin: 6px 0; }
+.view > h3 { margin-top: 22px; }
+
+/* Missables */
+.missable-card {
+  background: var(--card); border: 1px solid #e8b4ac; border-left: 6px solid #b3261e;
+  border-radius: 14px; padding: 18px; margin-bottom: 14px;
+}
+.missable-card h3 { margin: 0 0 4px; font-size: 1.2rem; }
+.missable-card .guide-text { white-space: pre-wrap; }
+.calm { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 16px 18px; }
+
+/* Sources */
+.source-list { list-style: none; margin: 0 0 18px; padding: 0; display: grid; gap: 8px; }
+.source-list li { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 10px 14px; }
+
+/* Footer */
+.foot { max-width: 1180px; margin: 0 auto; padding: 10px 18px 30px; color: var(--muted); font-size: 0.9rem; }
+.foot-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 12px; }
+.foot-actions button, .import-label {
+  border: 1px solid var(--line); background: var(--card); border-radius: 8px;
+  padding: 9px 14px; font-weight: 700; cursor: pointer; color: var(--ink);
+}
+.foot-actions button:hover, .import-label:hover { border-color: var(--accent); }
+
+@media (max-width: 860px) {
+  .split { grid-template-columns: 1fr; }
+  .detail { position: static; }
+  .masthead h1 { font-size: 1.55rem; }
+}
