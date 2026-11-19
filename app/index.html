@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leonida Platinum — GTA 6 Trophy Guide &amp; Tracker</title>
+<meta name="description" content="Offline guide and tracker for all 55 GTA 6 trophies on PlayStation 5: official names, descriptions and grades, saved progress, filters, a spoiler setting, a platinum roadmap and cited guides.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">VI</span>
+      <div>
+        <h1>Leonida Platinum</h1>
+        <p class="tagline">The GTA 6 trophy guide &amp; tracker — all 55 trophies, offline, in your own words with sources.</p>
+      </div>
+    </div>
+    <div class="progress" id="progress" aria-live="polite">
+      <div class="progress-count"><strong id="earnedCount">0</strong><span> / 55 earned</span></div>
+      <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="55" aria-valuenow="0" id="progressBar"><span id="progressFill"></span></div>
+      <div class="grade-counts" id="gradeCounts"></div>
+    </div>
+  </div>
+  <nav class="tabs" aria-label="Guide sections">
+    <a href="#/" data-route="checklist">Checklist</a>
+    <a href="#/roadmap" data-route="roadmap">Platinum roadmap</a>
+    <a href="#/missables" data-route="missables">Missables</a>
+    <a href="#/sources" data-route="sources">Sources &amp; honesty</a>
+  </nav>
+</header>
+
+<main id="main">
+  <section id="view-checklist" class="view" aria-label="Trophy checklist">
+    <div class="toolbar" role="search">
+      <label class="field search-field">Search
+        <input type="search" id="searchInput" placeholder="Search a trophy name or description…" autocomplete="off">
+      </label>
+      <label class="field">Kind
+        <select id="kindFilter">
+          <option value="all">All kinds</option>
+          <option value="story">Story</option>
+          <option value="missable">Missable</option>
+          <option value="collectible">Collectibles</option>
+          <option value="activity">Activities</option>
+          <option value="character">Character quests</option>
+          <option value="crime">Crime</option>
+          <option value="secret">Secrets</option>
+          <option value="platinum">Platinum</option>
+        </select>
+      </label>
+      <label class="field">Grade
+        <select id="gradeFilter">
+          <option value="all">All grades</option>
+          <option value="platinum">Platinum</option>
+          <option value="gold">Gold</option>
+          <option value="silver">Silver</option>
+          <option value="bronze">Bronze</option>
+        </select>
+      </label>
+      <label class="field">Show
+        <select id="earnedFilter">
+          <option value="all">All trophies</option>
+          <option value="todo">Not earned yet</option>
+          <option value="earned">Earned only</option>
+        </select>
+      </label>
+      <label class="switch"><input type="checkbox" id="spoilerToggle"> <span>Hide story spoilers</span></label>
+    </div>
+    <p class="list-meta" id="listMeta"></p>
+    <div class="split">
+      <ol class="trophy-list" id="trophyList"></ol>
+      <aside class="detail" id="detailPane" aria-live="polite"></aside>
+    </div>
+  </section>
+
+  <section id="view-roadmap" class="view" aria-label="Platinum roadmap" hidden>
+    <div class="page-head">
+      <h2>Road to the platinum</h2>
+      <p id="roadmapNote"></p>
+    </div>
+    <ol class="stages" id="roadmapStages"></ol>
+    <h3>Watch out for</h3>
+    <ul class="warnings" id="roadmapWarnings"></ul>
+  </section>
+
+  <section id="view-missables" class="view" aria-label="Missable trophies" hidden>
+    <div class="page-head">
+      <h2>Missable trophies</h2>
+      <p>Every trophy that can be missed — and the good news that the rest cannot.</p>
+    </div>
+    <div id="missableList"></div>
+  </section>
+
+  <section id="view-sources" class="view" aria-label="Sources and honesty" hidden>
+    <div class="page-head">
+      <h2>Sources &amp; honesty</h2>
+      <p>Every fact in this guide names where it came from. The game launched on 19 November 2026, so a few trophies are still uncracked — this guide says so plainly instead of guessing.</p>
+    </div>
+    <ul class="source-list" id="sourceList"></ul>
+    <h3>What is still unknown</h3>
+    <p>Five trophies have no confirmed trigger in any source checked on 19 November 2026: In The Beginning…, Capital Offense, Bad Luck, I Guess, The Truth Is Out There and Ten Pin. PowerPyx marks them unknown; GTA Zone lists them as unconfirmed. Their guides say so, and will be updated when a source confirms them.</p>
+    <h3>How the list was checked</h3>
+    <p>Names, descriptions and grades were checked live on 19 November 2026 against Exophase and PSNProfiles, which agree on every one of the 55. Hidden flags follow GTA Zone's hidden/visible split (28 hidden, 27 visible). Progress targets (such as 42 Shooting Range challenges) come from PSNProfiles.</p>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="foot-actions">
+    <button type="button" id="exportBtn">Export progress (.json)</button>
+    <label class="import-label">Import progress <input type="file" id="importInput" accept="application/json,.json" hidden></label>
+    <button type="button" id="resetBtn">Reset progress</button>
+  </div>
+  <p>Unofficial fan guide. Not affiliated with Rockstar Games or PlayStation. Trophy names and descriptions are shown as PlayStation publishes them; the guide text is written for this guide and cites its sources. Your progress is saved only in this browser (localStorage) — nothing leaves your device. Works fully offline.</p>
+</footer>
+
+<script type="module" src="js/main.js"></script>
+</body>
+</html>
